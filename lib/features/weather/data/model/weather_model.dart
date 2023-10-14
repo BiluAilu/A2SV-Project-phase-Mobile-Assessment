@@ -13,7 +13,7 @@ class WeatherDataModel extends WeatherData {
     final next6Days = List<WeatherDay>.from(
       json['data']['weather'].sublist(1, 7).map((day) => WeatherDataModel.fromJson(day)),
     );
-
+  print(next6Days);
     return WeatherDataModel(
       currentWeatherDesc: currentWeatherDesc,
       currentTempC: currentTempC,

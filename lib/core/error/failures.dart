@@ -29,3 +29,10 @@ abstract class Failure extends Equatable {
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError(); 
   }
+
+
+    class NoResult extends Failure{
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError(); 
+  }

@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:weather/core/error/failures.dart';
+import 'package:weather/core/utils/constants.dart';
 import 'package:weather/features/weather/data/model/weather_model.dart';
 import 'package:weather/features/weather/domain/entity/weather.dart';
 import 'package:http/http.dart' as http;
@@ -20,8 +21,6 @@ abstract class WeatherRemoteDataSource {
 
 
 class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
-  final String baseUrl="https://api.worldweatheronline.com"; // Add the base URL of your weather API here
-  final String apiKey="68da0c21ae6d455e91771733231110"; // Add your API key here
  late http.Client httpClient; // Define httpClient
 
   
@@ -36,10 +35,13 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
 
     try {
     final response = await http.get(Uri.parse(url));
-
+  // print(response);
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(response.body);
+      // print(data);
       final weatherData = WeatherDataModel.fromJson(data);
+      print("am here");
+      print(weatherData);
       return Right(weatherData);
     } else {
       // Handle server error with ServerException
@@ -50,4 +52,11 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
     return Left(NetworkFailure());
   }
   }
+}
+
+
+ main() {
+  WeatherRemoteDataSourceImpl w=WeatherRemoteDataSourceImpl();
+  w.getWeather('woliso');
+
 }
