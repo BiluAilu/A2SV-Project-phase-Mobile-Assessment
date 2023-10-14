@@ -1,16 +1,31 @@
-# weather
+# Weather App
+A simple Flutter weather app that allows users to search for weather information by city.
 
-A new Flutter project.
+# Features
+Search Weather: Users can enter a city and search for its current weather information.
+Display Weather: Display the current weather conditions, temperature, and a 6-day forecast.
 
 ## Getting Started
+To get started with this project, follow the steps below:
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+Flutter installed on your machine.
+Installation
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Alt text](image.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+### Project Structure
+![Alt text](image-1.png)
+
+
+
+### License
+
+Feel free to customize the sections, add more details, or include any additional information relevant to your project. Don't forget to update the placeholders such as https://github.com/BiluAilu/A2SV-Project-phase-Mobile-Assessment.git, project structure, dependencies, and license information.
+
+
+
+
