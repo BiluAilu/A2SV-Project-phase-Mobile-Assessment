@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather/core/utils/colors.dart';
 import 'package:weather/core/utils/platform.dart';
 import 'package:weather/features/weather/presentation/bloc/bloc/weather_bloc.dart';
+import 'package:weather/features/weather/presentation/screens/detail.dart';
 import 'package:weather/features/weather/presentation/widgets/bloc_widget.dart';
 import 'package:weather/injection_dependencies.dart';
 
@@ -20,14 +21,14 @@ class _HomeState extends State<Home> {
     return BlocProvider<WeatherBloc>(
       create: (context) => sl<WeatherBloc>(),
       child: Scaffold(
-        backgroundColor: mian_background,
+        backgroundColor: main_background,
         body: Container(
           padding: EdgeInsets.only(
               top: screen_size(context).height * 0.1, right: 20, left: 20),
           child: Column(children: [
             Text(
               "Choose a City",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold,color: texts_color),
             ),
             SizedBox(
               height: 20,
@@ -54,7 +55,9 @@ class _HomeState extends State<Home> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Detail()));
+                    },
                     child: Text(
                       "Search",
                       style: TextStyle(color: Colors.white),
