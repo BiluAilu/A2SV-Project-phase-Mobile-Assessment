@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather/features/weather/presentation/screens/get_started.dart';
-
-void main() {
+import 'injection_dependencies.dart' as di;
+void main() async{
+     WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 

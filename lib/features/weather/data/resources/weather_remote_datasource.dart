@@ -21,9 +21,9 @@ abstract class WeatherRemoteDataSource {
 
 
 class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
- late http.Client httpClient; // Define httpClient
+ late http.Client client; // Define httpClient
 
-  
+  WeatherRemoteDataSourceImpl({required this.client });
   @override
   Future<Either<Failure, WeatherData>> getWeather(String city) async {
     const endpoint = '/premium/v1/weather.ashx'; // Adjust this based on your API
@@ -56,7 +56,7 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
 
 
  main() {
-  WeatherRemoteDataSourceImpl w=WeatherRemoteDataSourceImpl();
+  WeatherRemoteDataSourceImpl w=WeatherRemoteDataSourceImpl(client: http.Client());
   w.getWeather('woliso');
 
 }
